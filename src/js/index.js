@@ -1,5 +1,3 @@
-
-
 // ;;;;;;;;;;;;;;;;Константы;;;;;;;;;;;;;;;;;;;;
 
 const Azathoth = document.querySelector('.Azathoth'),
@@ -13,7 +11,8 @@ const Azathoth = document.querySelector('.Azathoth'),
       backCard = document.querySelector('.back-card'),
       levelContainer = document.querySelector('.level-container'),
       mixContainer = document.querySelector('.mix-container'),
-      deckContainer = document.querySelector('.deck-container');
+      deckContainer = document.querySelector('.deck-container'),
+      playCard = document.querySelector('.deck-container-bottom');
 
 
 
@@ -77,11 +76,41 @@ btnHard.addEventListener('click', () => {
 
 
 btnMix.addEventListener('click', () => {
-  btnMix.classList.add('btn-active');
+  btnMix.classList.toggle('btn-active');
   deckContainer.style.display = 'block';
 });
 
 
 
 
-// console.log('ZALUPA');
+
+
+// ******************************Типа логика********************************
+
+const cardsBlueData = ['blue1', 'blue2','blue3','blue4','blue5','blue6','blue7','blue8','blue9','blue10','blue11','blue12'];
+const cardsGreenData = ['green1', 'green2', 'green3', 'green4', 'green5', 'green6', 'green7', 'green8', 'green9', 'green10', 'green11', 'green12', 'green13', 'green14', 'green15', 'green16', 'green17', 'green18'];
+const cardsBrownData = ['brown1', 'brown2', 'brown3', 'brown4', 'brown5', 'brown6', 'brown7', 'brown8', 'brown9', 'brown10', 'brown11', 'brown12', 'brown13', 'brown14', 'brown15', 'brown16', 'brown17', 'brown18', 'brown19', 'brown20',  'brown21'];
+
+
+const randomBlue = Math.round(Math.random() * cardsBlueData.length);
+const randomGreen = Math.round(Math.random() * (18 -1) + 1);
+const randomBrown = Math.round(Math.random() * (21 -1) + 1);
+let stage1 = [`green${randomGreen}`, `brown${randomBrown}`, `brown${randomBrown - 1}`, `blue${randomBlue}`, `green${randomGreen - 1}`, `green${randomGreen - 2}`, `brown${randomBrown - 2}`, `brown${randomBrown + 1}`, `brown${randomBrown + 2}`, `blue${randomBlue - 1}`, `green${randomGreen + 1}`, `green${randomGreen + 2}`, `brown${randomBrown + 3}`, `brown${randomBrown + 4}`, `brown${randomBrown - 4}`, `brown${randomBrown - 3}`];
+// let stage2 = [`green${randomGreen - 1}`, `green${randomGreen - 2}`, `brown${randomBrown - 2}`, `brown${randomBrown + 1}`, `brown${randomBrown + 2}`, `blue${randomBlue - 1}`];
+// let stage3 = [`green${randomGreen + 1}`, `green${randomGreen + 2}`, `brown${randomBrown + 3}`, `brown${randomBrown + 4}`, `brown${randomBrown - 4}`, `brown${randomBrown - 3}`];
+
+backCard.addEventListener('click', changeBg);
+
+// playCard.style.background = `url('../../assets/MythicCards/blue/${i}.jpg')`;
+let i = 0;
+console.log(i);
+function changeBg(){
+  
+    return i += 1;
+   
+    // playCard.style.background = `url('../../assets/MythicCards/ALL/${stage1[i]}.jpg')`;
+    // playCard.style.backgroundSize = '100%';
+  
+}
+
+
