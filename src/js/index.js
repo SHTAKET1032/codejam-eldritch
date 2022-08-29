@@ -102,7 +102,7 @@ function changeBg(){
   if (i === 16){
     alert('Reload page');
   }
-  playCard.style.background = `url('../../assets/MythicCards/ALL/${stage1[i]}.jpg')`;
+  playCard.style.background = `url('../assets/MythicCards/ALL/${stage1[i]}.jpg')`;
   playCard.style.width = '404px';
   playCard.style.height = '592px';
   playCard.style.backgroundSize = '103%';
