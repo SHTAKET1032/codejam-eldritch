@@ -38,7 +38,7 @@ h2
   display: block
   text-align: center
   color: white
-  font-size: 2em
+  font-size: 4em
   padding-bottom: 1.5vh
 
 .boss-container
@@ -52,9 +52,11 @@ h2
   display: flex
   flex-direction: row
   padding-bottom: 1.5vh
+.boss-container-top :nth-child(2)
+    display: none
 
 .boss-container-bottom
-  display: flex
+  display: none
   flex-direction: row
 
 .boss-card
@@ -66,14 +68,14 @@ h2
 
 
 .card-img
-  width: 13.5rem
+  width: 25rem
   border-radius: 10px
   border: rgb(209, 204, 184) 2px solid
   &:hover
     cursor: pointer
 
 .boss-card-active
-  border: 2px solid rgb(180, 17, 217)
+  border: 5px solid rgb(180, 17, 217)
 
 
 
@@ -166,8 +168,13 @@ h2
   padding-bottom: 20px
 
 .deck-container-bottom
-  width: 216px
-  height: 316px
+  // width: 480px
+  // height: 706px
   // background-image: url('../../assets/MythicCards/blue/blue1.jpg') 
   background: none
-  background-size: 100% 100%
+  // background-size: 100% 100%
+
+
+.back-card
+  &:active
+    border: 5px solid rgb(180, 17, 217)

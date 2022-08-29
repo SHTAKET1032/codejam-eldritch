@@ -15,8 +15,6 @@ const Azathoth = document.querySelector('.Azathoth'),
       playCard = document.querySelector('.deck-container-bottom');
 
 
-
-
 // ;;;;;;;;;;;Клики по древним;;;;;;;;;;;;;;;;
 
 Azathoth.addEventListener('click', () => {
@@ -55,33 +53,30 @@ ShubNiggurath.addEventListener('click', () => {
 // ;;;;;;;;;;;Клики по уровням сложности и замес колоды;;;;;;;;;;;;;;;;
 
 
-btnEasy.addEventListener('click', () => {
-  btnEasy.classList.add('btn-active');
-  btnMedium.classList.remove('btn-active');
-  btnHard.classList.remove('btn-active');
-  mixContainer.style.display = 'flex';
-})
+// btnEasy.addEventListener('click', () => {
+//   btnEasy.classList.add('btn-active');
+//   btnMedium.classList.remove('btn-active');
+//   btnHard.classList.remove('btn-active');
+//   mixContainer.style.display = 'flex';
+// })
 btnMedium.addEventListener('click', () => {
-  btnEasy.classList.remove('btn-active');
+  // btnEasy.classList.remove('btn-active');
   btnMedium.classList.add('btn-active');
-  btnHard.classList.remove('btn-active');
+  // btnHard.classList.remove('btn-active');
   mixContainer.style.display = 'flex';
 })
-btnHard.addEventListener('click', () => {
-  btnEasy.classList.remove('btn-active');
-  btnMedium.classList.remove('btn-active');
-  btnHard.classList.add('btn-active');
-  mixContainer.style.display = 'flex';
-})
+// btnHard.addEventListener('click', () => {
+//   btnEasy.classList.remove('btn-active');
+//   btnMedium.classList.remove('btn-active');
+//   btnHard.classList.add('btn-active');
+//   mixContainer.style.display = 'flex';
+// })
 
 
 btnMix.addEventListener('click', () => {
   btnMix.classList.toggle('btn-active');
   deckContainer.style.display = 'block';
 });
-
-
-
 
 
 
@@ -95,22 +90,22 @@ const cardsBrownData = ['brown1', 'brown2', 'brown3', 'brown4', 'brown5', 'brown
 const randomBlue = Math.round(Math.random() * cardsBlueData.length);
 const randomGreen = Math.round(Math.random() * (18 -1) + 1);
 const randomBrown = Math.round(Math.random() * (21 -1) + 1);
-let stage1 = [`green${randomGreen}`, `brown${randomBrown}`, `brown${randomBrown - 1}`, `blue${randomBlue}`, `green${randomGreen - 1}`, `green${randomGreen - 2}`, `brown${randomBrown - 2}`, `brown${randomBrown + 1}`, `brown${randomBrown + 2}`, `blue${randomBlue - 1}`, `green${randomGreen + 1}`, `green${randomGreen + 2}`, `brown${randomBrown + 3}`, `brown${randomBrown + 4}`, `brown${randomBrown - 4}`, `brown${randomBrown - 3}`];
+let stage1 = ['', `green${randomGreen}`, `brown${randomBrown}`, `brown${randomBrown - 1}`, `blue${randomBlue}`, `green${randomGreen - 1}`, `green${randomGreen - 2}`, `brown${randomBrown - 2}`, `brown${randomBrown + 1}`, `brown${randomBrown + 2}`, `blue${randomBlue - 1}`, `green${randomGreen + 1}`, `green${randomGreen + 2}`, `brown${randomBrown + 3}`, `brown${randomBrown + 4}`, `brown${randomBrown - 4}`, `brown${randomBrown - 3}`];
 // let stage2 = [`green${randomGreen - 1}`, `green${randomGreen - 2}`, `brown${randomBrown - 2}`, `brown${randomBrown + 1}`, `brown${randomBrown + 2}`, `blue${randomBlue - 1}`];
 // let stage3 = [`green${randomGreen + 1}`, `green${randomGreen + 2}`, `brown${randomBrown + 3}`, `brown${randomBrown + 4}`, `brown${randomBrown - 4}`, `brown${randomBrown - 3}`];
 
 backCard.addEventListener('click', changeBg);
 
-// playCard.style.background = `url('../../assets/MythicCards/blue/${i}.jpg')`;
-let i = 0;
-console.log(i);
+let counter = 0;
 function changeBg(){
-  
-    return i += 1;
-   
-    // playCard.style.background = `url('../../assets/MythicCards/ALL/${stage1[i]}.jpg')`;
-    // playCard.style.backgroundSize = '100%';
-  
+  let i = counter += 1;
+  if (i === 16){
+    alert('Reload page');
+  }
+  playCard.style.background = `url('../../assets/MythicCards/ALL/${stage1[i]}.jpg')`;
+  playCard.style.width = '404px';
+  playCard.style.height = '592px';
+  playCard.style.backgroundSize = '103%';
 }
 
 
